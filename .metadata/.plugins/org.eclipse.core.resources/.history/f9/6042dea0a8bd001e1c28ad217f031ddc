@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+	<bean id="emp" class="com.thenxtprogrammer.dto.Employee"
+		autowire="byType">
+		<!-- <constructor-arg value="Sant"></constructor-arg> -->
+		<!-- <constructor-arg value="12" type="Integer"></constructor-arg> -->
+		<property name="empName" value="sant"></property>
+		<property name="age" value="12"></property>
+        <property name="address" ref="addr1"></property>
+    </bean>
+
+	<bean id="addr1" class="com.thenxtprogrammer.dto.Address">
+		<property name="city" value="shahdol"></property>
+		<property name="state" value="MP"></property>
+	</bean>
+
+	<bean id="emp1" class="com.thenxtprogrammer.dto.Employee"
+		autowire="byType">
+		<property name="empName" value="sant"></property>
+		<property name="age" value="12"></property>
+		<property name="address" ref="addr2"></property>
+    </bean>
+
+	<bean id="addr2" class="com.thenxtprogrammer.dto.Address">
+		<property name="city" value="Pune"></property>
+		<property name="state" value="MH"></property>
+	</bean>
+
+
+</beans>
